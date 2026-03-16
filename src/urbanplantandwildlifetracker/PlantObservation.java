@@ -8,6 +8,18 @@ package urbanplantandwildlifetracker;
  *
  * @author safia
  */
-public class PlantObservation {
+public class PlantObservation extends Observation {
     
-}
+    private String TypeOfPlant;
+    
+
+    public PlantObservation(String TypeOfPlant, int id, String personsName, String location, String date) {
+        super(id, personsName, location, date);
+        this.TypeOfPlant = TypeOfPlant;
+    }
+    
+    @Override
+     public String displayDetail(){
+        return super.displayDetail() + "id" + id + "Name"+ personsName + "location" + location + "date" + date + "" + "" + TypeOfPlant; 
+     }
+  }
