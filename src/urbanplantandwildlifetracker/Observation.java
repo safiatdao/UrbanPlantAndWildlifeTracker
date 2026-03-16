@@ -9,10 +9,10 @@ package urbanplantandwildlifetracker;
  * @author safia
  */
 public class Observation {
-    private int id;
-    private String personsName;
-    private String location;
-    private String date;
+    protected int id;
+    protected String personsName;
+    protected String location;
+    protected String date;
     
      public Observation(int id, String personsName, String location, String date) {
         this.id = id;
