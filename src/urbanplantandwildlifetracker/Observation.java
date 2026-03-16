@@ -9,5 +9,53 @@ package urbanplantandwildlifetracker;
  * @author safia
  */
 public class Observation {
+    private int id;
+    private String personsName;
+    private String location;
+    private String date;
+    
+     public Observation(int id, String personsName, String location, String date) {
+        this.id = id;
+        this.personsName = personsName;
+        this.location = location;
+        this.date = date;
+    }
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPersonsName() {
+        return personsName;
+    }
+
+    public void setPersonsName(String personsName) {
+        this.personsName = personsName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String displayDetail(){
+        return id + "" + personsName + "" + location + "" + date;  
+    }
     
 }
