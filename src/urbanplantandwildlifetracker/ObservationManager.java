@@ -14,11 +14,11 @@ public class ObservationManager implements ObservationStackInterface{
      private ArrayList<Observation> observations = new ArrayList<>();
      
     
-        //@Override
+        @Override
         public boolean isEmpty(){
         return observations.isEmpty();
     }
-        
+        @Override
         //puts an item onto the top of the stack
         public void push(Observation newItem){
           observations.add(0, (Observation) newItem);   
@@ -26,6 +26,7 @@ public class ObservationManager implements ObservationStackInterface{
         
         //removes the item from the top of the stack and returns it
     
+        @Override
     public Object pop() {
         if (!(observations.isEmpty())) {
             return observations.remove(0);
@@ -34,7 +35,7 @@ public class ObservationManager implements ObservationStackInterface{
         }
         
     }
-      //@Override
+      @Override
     // removes all elements from the stack
     public void emptyStack() {
         while (!observations.isEmpty()) {
@@ -44,6 +45,7 @@ public class ObservationManager implements ObservationStackInterface{
     
       // return a String object that consists of all elements from the stack
     // a FOR loop is used here, but you can use an Iterator instead
+    @Override
     public String displayStack() {
         String sMessage = "";
         if (observations.isEmpty()) {
