@@ -8,13 +8,16 @@ package urbanplantandwildlifetracker;
  *
  * @author safia
  */
-public class UrbanPlantAndWildlifeTracker {
+public class ObsApp {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        ObservationGUI ObsApp = new ObservationGUI();
+        ObsApp.setVisible(true);
         
         //Created a stack to store the observations
        ObservationStack stack = new ObservationStack();

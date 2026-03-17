@@ -53,7 +53,7 @@ public class ObservationStack implements ObservationInterface{
          } else {
            sMessage = "Sightings: \n";
              for (int count = 0; count < observations.size(); count++) {
-                sMessage += observations.get(count) + "\n";
+                sMessage += observations.get(count).displayDetail() + "\n";
                
             }
         }
