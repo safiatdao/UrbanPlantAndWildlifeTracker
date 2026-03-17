@@ -8,7 +8,7 @@ package urbanplantandwildlifetracker;
  *
  * @author safia
  */
-public interface ObservationStackInterface {
+public interface ObservationInterface {
     
     public boolean isEmpty();
 

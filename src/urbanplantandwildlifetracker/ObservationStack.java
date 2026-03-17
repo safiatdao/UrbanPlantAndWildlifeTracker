@@ -9,7 +9,7 @@ import java.util.*;
  *
  * @author safia
  */
-public class ObservationManager implements ObservationStackInterface{
+public class ObservationStack implements ObservationInterface{
     
      private ArrayList<Observation> observations = new ArrayList<>();
      
