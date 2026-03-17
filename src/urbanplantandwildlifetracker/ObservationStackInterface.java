@@ -10,4 +10,13 @@ package urbanplantandwildlifetracker;
  */
 public interface ObservationStackInterface {
     
+    public boolean isEmpty();
+
+    public void push(Observation newItem);
+
+    public Object pop();
+
+    public void emptyStack();
+
+    public String displayStack();
 }

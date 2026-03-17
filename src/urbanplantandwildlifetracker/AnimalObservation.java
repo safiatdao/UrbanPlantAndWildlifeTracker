@@ -19,6 +19,6 @@ public class AnimalObservation extends Observation{
     
     @Override
     public String displayDetail(){
-        return super.displayDetail() + "id" + id + "Name"+ personsName + "location" + location + "date" + date; 
+        return super.displayDetail() + "id" + id + "Name"+ personsName + "location" + location + "date" + date + "" + animalSpecies; 
     }
 }
