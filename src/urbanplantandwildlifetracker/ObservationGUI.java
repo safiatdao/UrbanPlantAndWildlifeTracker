@@ -103,6 +103,11 @@ public class ObservationGUI extends javax.swing.JFrame {
         });
 
         viewBtn.setText("View ");
+        viewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBtnActionPerformed(evt);
+            }
+        });
 
         TextArea.setColumns(20);
         TextArea.setRows(5);
@@ -253,6 +258,16 @@ public class ObservationGUI extends javax.swing.JFrame {
         
        TextArea.setText(stack.displayStack());
     }//GEN-LAST:event_addBtnActionPerformed
+
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
+        // TODO add your handling code here:
+        if(stack.isEmpty()){
+            TextArea.setText("Sorry, no entries yet ");
+        }else{
+             TextArea.setText(stack.displayStack());
+        }
+
+    }//GEN-LAST:event_viewBtnActionPerformed
 
     /**
      * @param args the command line arguments
