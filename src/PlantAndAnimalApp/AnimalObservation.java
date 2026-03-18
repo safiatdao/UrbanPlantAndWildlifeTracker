@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package urbanplantandwildlifetracker;
+package PlantAndAnimalApp;
 
 /**
  *
@@ -25,4 +25,10 @@ public class AnimalObservation extends Observation{
     public void update(String additionalDetail){
         this.animalSpecies = additionalDetail;
     }
+    
+    
+    public void update(String personsName, String location, String date, String animalSpecies) {
+    super.update(id,personsName, location, date, animalSpecies);
+    this.animalSpecies = animalSpecies;
+}
 }

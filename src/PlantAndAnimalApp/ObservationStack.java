@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package urbanplantandwildlifetracker;
+package PlantAndAnimalApp;
 
 import java.util.*;
 /**
  *
  * @author safia
  */
-public class ObservationStack implements ObservationInterface{
+public class ObservationStack implements ObservationStackInterface{
     
 
     
@@ -69,11 +69,7 @@ public class ObservationStack implements ObservationInterface{
         for(Observation obs : observations){
             
             if(obs.getId() == id){
-                obs.setPersonsName(personsName);
-                obs.setLocation(location);
-                obs.setDate(date);
-                obs.setAdditionalDetail(additionalDetail);
-                
+                obs.update(id, personsName, location, date, additionalDetail); 
                 return;
             }
         }
