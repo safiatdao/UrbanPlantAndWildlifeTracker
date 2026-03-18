@@ -18,8 +18,13 @@ public class PlantObservation extends Observation {
         this.TypeOfPlant = TypeOfPlant;
     }
     
+    
+    public void update(String additionalDetail){
+        this.TypeOfPlant = additionalDetail;
+    }
+    
     @Override
      public String displayDetail(){
-        return super.displayDetail() + "Plant Id "+ id + "Name"+ personsName + "location" + location + "date" + date + "Plant" + TypeOfPlant; 
+        return "Plant Id-  "+ id + "\n" + "Name-  "+ personsName + "\n" + "Location-  " + location + "\n" + "Date-  " + date + "\n" + "Plant-  " + TypeOfPlant; 
      }
   }

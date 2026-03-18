@@ -11,6 +11,12 @@ import java.util.*;
  */
 public class ObservationStack implements ObservationInterface{
     
+    private int id;
+    private String personsName;
+    private String location;
+    private String date;
+    private String additionalDetail;
+    
      private ArrayList<Observation> observations = new ArrayList<>();
      
     
@@ -51,14 +57,33 @@ public class ObservationStack implements ObservationInterface{
         if (observations.isEmpty()) {
             sMessage = sMessage.concat("No Entries FOund");
          } else {
-           sMessage = "Sightings: \n";
+           sMessage = "Sightings: \n\n";
              for (int count = 0; count < observations.size(); count++) {
-                sMessage += observations.get(count).displayDetail() + "\n";
+                sMessage += observations.get(count).displayDetail() + "\n\n\n";
                
             }
         }
         return sMessage;
+        
     }
+    
+ 
+    public void updateObservation(int id, String personsName, String location, String date, String additionalDetail){
+        
+        for(Observation obs : observations){
+            
+            if(obs.getId() == id){
+                obs.setPersonsName(personsName);
+                obs.setLocation(location);
+                obs.setDate(date);
+                obs.setAdditionalDetail(additionalDetail);
+                
+                return;
+            }
+        }
+    }
+    
+    
     }
 
     

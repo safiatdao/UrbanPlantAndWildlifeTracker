@@ -13,6 +13,7 @@ public class Observation {
     protected String personsName;
     protected String location;
     protected String date;
+    protected String additionalDetail;
     
      public Observation(int id, String personsName, String location, String date) {
         this.id = id;
@@ -21,7 +22,7 @@ public class Observation {
         this.date = date;
     }
     
-
+     
     public int getId() {
         return id;
     }
@@ -53,7 +54,10 @@ public class Observation {
     public void setDate(String date) {
         this.date = date;
     }
-
+    
+     public void setAdditionalDetail(String additionalDetail ){
+         
+     }
     public String displayDetail(){
         return id + "" + personsName + "" + location + "" + date;  
     }
