@@ -4,6 +4,8 @@
  */
 package urbanplantandwildlifetracker;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author safia
@@ -238,6 +240,22 @@ public class ObservationGUI extends javax.swing.JFrame {
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // TODO add your handling code here:
+        try{
+        int DeleteId;
+        DeleteId = Integer.parseInt(idTF.getText());
+        
+        boolean found;
+        
+        found = stack.deleteObservation(DeleteId);
+        
+      
+       if(!found){
+           JOptionPane.showMessageDialog(null, "ID "+ DeleteId + "was not found");
+       } 
+         TextArea.setText(stack.displayStack());
+        }catch(Exception e){
+        JOptionPane.showMessageDialog(null, "Enter a valid ID");         
+    }
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed

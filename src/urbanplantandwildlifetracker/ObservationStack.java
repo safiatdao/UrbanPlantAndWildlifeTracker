@@ -11,13 +11,9 @@ import java.util.*;
  */
 public class ObservationStack implements ObservationInterface{
     
-    private int id;
-    private String personsName;
-    private String location;
-    private String date;
-    private String additionalDetail;
+
     
-     private ArrayList<Observation> observations = new ArrayList<>();
+     ArrayList<Observation> observations = new ArrayList<>();
      
     
         @Override
@@ -27,7 +23,7 @@ public class ObservationStack implements ObservationInterface{
         @Override
         //puts an item onto the top of the stack
         public void push(Observation newItem){
-          observations.add(0, (Observation) newItem);   
+          observations.add(0, newItem);   
     }
         
         //removes the item from the top of the stack and returns it
@@ -82,9 +78,18 @@ public class ObservationStack implements ObservationInterface{
             }
         }
     }
-    
-    
+
+    public boolean deleteObservation(int id){
+        for(int i = 0; i< observations.size(); i++){
+             if(observations.get(i).getId() == id){
+                 observations.remove(i);
+                 return true;
+             }
+        }
+         return false;
+        
     }
+}
 
     
     
