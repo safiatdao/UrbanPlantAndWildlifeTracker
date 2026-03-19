@@ -15,7 +15,7 @@ public class ObservationGUI extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ObservationGUI.class.getName());
     
     ObservationStack stack = new ObservationStack();
-    //int id = 1;
+  
     /**
      * Creates new form ObservationGUI
      */
@@ -222,18 +222,22 @@ public class ObservationGUI extends javax.swing.JFrame {
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
+        //Gets the id from the user and convert it into a integer
+        //And when the user updates the fields this code below gets the updated details from the text field
         int id = Integer.parseInt(idTF.getText());
         String personsName = nameTF.getText();
         String location = locationTF.getText();
         String date = dateTF.getText();
         String additionalDetail;
         
-        
+        //Depending on the selected radio button it will use the plant type or the animal species
         if(plantRB.isSelected()){
             additionalDetail = plantTypeTF.getText();
         }else{
             additionalDetail = speciesTF.getText();
         }
+        
+        //this updates the list and the updated list is displayed
         stack.updateObservation(id,personsName, location, date, additionalDetail);
         TextArea.setText(stack.displayStack());
     }//GEN-LAST:event_updateBtnActionPerformed
@@ -242,46 +246,55 @@ public class ObservationGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
         int DeleteId;
+        //This gets the id from the user and it converts it into an integer
         DeleteId = Integer.parseInt(idTF.getText());
         
         boolean found;
         
+        //calls the deleteObservation method get delete the observation recorded
         found = stack.deleteObservation(DeleteId);
         
       
+        //If there are id number is found(invalid number), this message below shows
        if(!found){
            JOptionPane.showMessageDialog(null, "ID "+ DeleteId + "was not found");
        } 
+       //shows the updated list of obervations
          TextArea.setText(stack.displayStack());
         }catch(Exception e){
+            //If user enters an invalid input
         JOptionPane.showMessageDialog(null, "Enter a valid ID");         
     }
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
+        
         int id = Integer.parseInt(idTF.getText());
         String person = nameTF.getText();
         String location = locationTF.getText();
         String date = dateTF.getText();
         
+        //this checks which of the radio buttons were selected
         if(plantRB.isSelected()){
-            stack.push 
+            stack.push //Creats a new plant observation and add it the stack
             (new PlantObservation(id, person, location, date, plantTypeTF.getText()));
         }else{
-            stack.push
+            stack.push// Creates a new animal observation and adds it to the stack
             (new AnimalObservation(id, person, location, date, speciesTF.getText()));
         }
         
-        
+        //Show the updated text area
        TextArea.setText(stack.displayStack());
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
         // TODO add your handling code here:
+        //This lines checks if the stack is empty
         if(stack.isEmpty()){
             TextArea.setText("Sorry, no entries yet ");
         }else{
+            //If the stack is not empty it displays all the observations
              TextArea.setText(stack.displayStack());
         }
 

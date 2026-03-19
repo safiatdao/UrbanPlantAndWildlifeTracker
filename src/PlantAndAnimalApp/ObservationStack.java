@@ -15,19 +15,20 @@ public class ObservationStack implements ObservationStackInterface{
     
      ArrayList<Observation> observations = new ArrayList<>();
      
-    
+    //Check is the stack is empty
         @Override
         public boolean isEmpty(){
         return observations.isEmpty();
     }
+        
+        //this adds new observatin to the top of the stack
         @Override
         //puts an item onto the top of the stack
         public void push(Observation newItem){
           observations.add(0, newItem);   
     }
         
-        //removes the item from the top of the stack and returns it
-    
+       //This removes observation from the top
         @Override
     public Object pop() {
         if (!(observations.isEmpty())) {
@@ -37,16 +38,9 @@ public class ObservationStack implements ObservationStackInterface{
         }
         
     }
-      @Override
-    // removes all elements from the stack
-    public void emptyStack() {
-        while (!observations.isEmpty()) {
-            pop();
-        }
-    }
+
     
-      // return a String object that consists of all elements from the stack
-    // a FOR loop is used here, but you can use an Iterator instead
+    //This shows all the observations in the stack
     @Override
     public String displayStack() {
         String sMessage = "";
@@ -63,7 +57,7 @@ public class ObservationStack implements ObservationStackInterface{
         
     }
     
- 
+ //updates an observation by its id
     public void updateObservation(int id, String personsName, String location, String date, String additionalDetail){
         
         for(Observation obs : observations){
@@ -75,6 +69,7 @@ public class ObservationStack implements ObservationStackInterface{
         }
     }
 
+    //Deletes an observation in the stack
     public boolean deleteObservation(int id){
         for(int i = 0; i< observations.size(); i++){
              if(observations.get(i).getId() == id){
