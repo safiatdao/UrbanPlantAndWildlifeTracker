@@ -10,8 +10,8 @@ package PlantAndAnimalApp;
  */
 public interface ObsLinkedListInterface {
     public void remove(int index);
-    public void add(int index, Object theElement);
-    public void add(Object element);
+    public void add(int index, Observation theElement);
+    public void add(Observation element);
     public boolean isEmpty();
-    public String printList();
+    //public String printList();
 }

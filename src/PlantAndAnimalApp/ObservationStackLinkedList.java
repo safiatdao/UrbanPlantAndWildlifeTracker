@@ -9,12 +9,14 @@ import java.util.*;
  *
  * @author safia
  */
-public class ObservationStack implements ObservationStackInterface{
+public class ObservationStackLinkedList implements ObservationStackInterface,ObsLinkedListInterface{
     
 
     
      ArrayList<Observation> observations = new ArrayList<>();
      
+      private LinkedList<Observation> obsList = new LinkedList<>();
+      
     //Check is the stack is empty
         @Override
         public boolean isEmpty(){
@@ -79,6 +81,23 @@ public class ObservationStack implements ObservationStackInterface{
         }
          return false;
         
+    }
+    @Override
+    // this adds to the list at a specific index
+    public void add(int index, Observation theElement){
+        obsList.add(index, theElement);
+    }
+    
+    @Override
+    // Adds to the end of the list
+    public void add(Observation element){
+        obsList.add(element);
+    }
+    
+    @Override
+    //this removes from the list by the index
+    public void remove(int index){
+        obsList.remove(index);
     }
 }
 

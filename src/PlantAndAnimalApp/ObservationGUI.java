@@ -14,7 +14,7 @@ public class ObservationGUI extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ObservationGUI.class.getName());
     
-    ObservationStack stack = new ObservationStack();
+    ObservationStackLinkedList stack = new ObservationStackLinkedList();
   
     /**
      * Creates new form ObservationGUI
